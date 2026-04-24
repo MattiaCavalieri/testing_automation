@@ -46,7 +46,7 @@ public class seleniumIntroduction {
 		// Eseguire lo script in firefox
 		// come per chrome possiamo utilizzare l'equivalente di chromedriver per firefox -> gecko driver
 		// webdriver.gecko.driver
-		System.setProperty("webdriver.chrome.driver", "C:/Mattia/Test Automation/geckodriver/geckodriver.exe");
+		// System.setProperty("webdriver.chrome.driver", "C:/Mattia/Test Automation/geckodriver/geckodriver.exe");
 		WebDriver driverFirefox = new FirefoxDriver();
 		driverFirefox.get("https://www.codicefiscaleonline.com/");
 		driverFirefox.getTitle();
@@ -56,7 +56,7 @@ public class seleniumIntroduction {
 		
 		
 		// Eseguire lo script in Edge
-		System.setProperty("webdriver.edge.driver", "C:/Mattia/Test Automation/edgedriver_win64/msedgedriver.exe");
+		// System.setProperty("webdriver.edge.driver", "C:/Mattia/Test Automation/edgedriver_win64/msedgedriver.exe");
 		WebDriver driverEdge = new EdgeDriver();
 		driverEdge.get("https://www.codicefiscaleonline.com/");
 		driverEdge.getTitle();
