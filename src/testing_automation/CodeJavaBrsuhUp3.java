@@ -2,6 +2,7 @@ package testing_automation;
 
 public class CodeJavaBrsuhUp3 {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 
 		// Stringhe
