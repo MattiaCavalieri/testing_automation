@@ -32,6 +32,40 @@ public class Locators {
 		// Tagname[attribute='value']
 		System.out.println(driver.findElement(By.cssSelector("p.error")).getText());
 
+		// individuare il link "Forgot your password" e cliccare sul link
+		driver.findElement(By.linkText("Forgot your password?")).click();
+
+		// utilizzo di XPath -> //Tagname[attribute='value']
+		// nel nostro caso stiamo inserendo lo username della pagina "Forgot Password"
+		// -> //imput[@placeholder='Name']
+		driver.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("Mattia");
+		// inseriamo l'indirizzo email
+		driver.findElement(By.cssSelector("input[placeholder='Email']")).sendKeys("mattiacavalieri@gmail.com");
+		// inseriamo in numero di cellulare
+		driver.findElement(By.cssSelector("input[placeholder='Phone Number']")).sendKeys("3357665433");
+
+		// se devo pulire un campo (ad esempio il numero di cellulare), individuo il
+		// campo e uso il metodo ".clear()" per cancellare quello che è contenuto
+		driver.findElement(By.cssSelector("input[placeholder='Phone Number']")).clear();
+		driver.findElement(By.cssSelector("input[placeholder='Phone Number']")).sendKeys("3480071909");
+
+		// un metodo alternativo per identificare i campi attraverso i loro xpath è
+		// usare il numero di xpath:
+		// ad esempio devo ripulire il campo email e email è il secondo campo (dall'alto) del form
+		driver.findElement(By.xpath("//input[@type='text'][2]")).clear();
+		driver.findElement(By.xpath("//input[@type='text'][2]")).sendKeys("wmc075c@motorola.com");
+		
+		// e' possibile arrivare a un campo, partendo dal suo genitore usando sempre gli Xpath
+		// la sintassi è -> //form/input[3]
+		driver.findElement(By.xpath("//form/input[3]")).clear();
+		driver.findElement(By.xpath("//form/input[3]")).sendKeys("3357665433");
+		
+		// identifico il pulsante per resettare il login
+		driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
+		
+		// recupero il testo mostrato per completare il reset del login
+		System.out.println(driver.findElement(By.cssSelector(".infoMsg")).getText());
+		
 	}
 
 }
