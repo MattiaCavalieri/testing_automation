@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Locators {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// System.setProperty("webdriver.chrome.driver", "C:/Mattia/Test
 		// Automation/chromedriver-win64/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
@@ -35,6 +35,10 @@ public class Locators {
 		// individuare il link "Forgot your password" e cliccare sul link
 		driver.findElement(By.linkText("Forgot your password?")).click();
 
+		// introduciamo una piccola attesa per permettere alla pagina di venire caricata
+		// completamente
+		Thread.sleep(1000);
+
 		// utilizzo di XPath -> //Tagname[attribute='value']
 		// nel nostro caso stiamo inserendo lo username della pagina "Forgot Password"
 		// -> //imput[@placeholder='Name']
@@ -51,21 +55,42 @@ public class Locators {
 
 		// un metodo alternativo per identificare i campi attraverso i loro xpath è
 		// usare il numero di xpath:
-		// ad esempio devo ripulire il campo email e email è il secondo campo (dall'alto) del form
+		// ad esempio devo ripulire il campo email e email è il secondo campo
+		// (dall'alto) del form
 		driver.findElement(By.xpath("//input[@type='text'][2]")).clear();
 		driver.findElement(By.xpath("//input[@type='text'][2]")).sendKeys("wmc075c@motorola.com");
-		
-		// e' possibile arrivare a un campo, partendo dal suo genitore usando sempre gli Xpath
+
+		// e' possibile arrivare a un campo, partendo dal suo genitore usando sempre gli
+		// Xpath
 		// la sintassi è -> //form/input[3]
 		driver.findElement(By.xpath("//form/input[3]")).clear();
 		driver.findElement(By.xpath("//form/input[3]")).sendKeys("3357665433");
-		
+
 		// identifico il pulsante per resettare il login
 		driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
-		
+
 		// recupero il testo mostrato per completare il reset del login
 		System.out.println(driver.findElement(By.cssSelector(".infoMsg")).getText());
-		
+
+		// identifico il pulsante "Go to Login" e lo clicco
+		driver.findElement(By.className("go-to-login-btn")).click();
+
+		// introduciamo una piccola attesa per permettere alla pagina di venire caricata
+		// completamente
+		Thread.sleep(1000);
+
+		// identifico il campo per inserire il nome utente e inserisco il valore tramite
+		// il metodo "sendKeys()"
+		driver.findElement(By.cssSelector("#inputUsername")).sendKeys("mattiacavalieri@gmail.com");
+		// inserisco la password
+		driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("rahulshettyacademy");
+
+		// seleziono l'opzione "Remember me"
+		driver.findElement(By.cssSelector("#chkboxOne")).click();
+
+		// clicco su "Sign In"
+		driver.findElement(By.xpath("//button[contains(@class, 'submit')]")).click();
+
 	}
 
 }
