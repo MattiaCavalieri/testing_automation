@@ -18,7 +18,8 @@ public class Locators3 {
 		// stampa "Login"
 		System.out.println(driver.findElement(By.xpath("//header/div/button[1]/following-sibling::button[1]")).getText());
 		
-
+		// navigare from child-to-parent
+		System.out.println(driver.findElement(By.xpath("//header/div/button[1]/parent::div/button[2]")).getText());
 	}
 
 }
