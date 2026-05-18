@@ -1,7 +1,10 @@
 package testing_automation;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class UpdatedDropdown {
@@ -11,12 +14,24 @@ public class UpdatedDropdown {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 
+		// verifichiamo che il checkbox sia selezionato o no
+		System.out.println(driver.findElement(By.name("ctl00$mainContent$chk_friendsandfamily")).isSelected());
+
+		// aggiungiamo la selezione dei checkbox
+		driver.findElement(By.name("ctl00$mainContent$chk_friendsandfamily")).click();
+
+		// contiamo i checkbox presenti e li stampiamo in console
+		System.out.println(driver.findElements(By.cssSelector("input[type='checkbox']")).size());
+
+		// verifichiamo che il checkbox sia selezionato o no
+		System.out.println(driver.findElement(By.name("ctl00$mainContent$chk_friendsandfamily")).isSelected());
+
 		// seleziono il dorpdown del numero di passeggeri per aprire la selezione del
 		// numero di passeggeri
 		driver.findElement(By.id("divpaxinfo")).click();
 
 		Thread.sleep(1000);
-		
+
 		// recupero il numero iniziale di passeggeri selezionati e lo stampo in console
 		System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
 
@@ -29,9 +44,10 @@ public class UpdatedDropdown {
 
 		// termino l'operazione con il tasto Done
 		driver.findElement(By.id("btnclosepaxoption")).click();
-		
+
 		// stampo in console l'output del totale dei passeggeri selezionati
 		System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
+
 	}
 
 }
