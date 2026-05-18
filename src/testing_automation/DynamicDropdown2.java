@@ -1,0 +1,25 @@
+package testing_automation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DynamicDropdown2 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// inizializzo il driver per Chrome e navigo verso il link di test
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+		// apro il dropdown delle citta' di partenza
+		driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
+		// seleziono "Bengaluru" come città di partenza
+		driver.findElement(By.xpath("//a[@value='BLR']")).click();
+		
+		Thread.sleep(2000);
+		
+		// uso un metodo diverso per selezionare la città di desinazione : traversal parent-> child
+		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR']//a[@value='MAA']")).click();
+
+	}
+
+}
