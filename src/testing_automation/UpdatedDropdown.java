@@ -32,7 +32,7 @@ public class UpdatedDropdown {
 		// verifichiamo che il checkbox sia selezionato o no e stampiamo a schermo il controllo
 		// System.out.println(driver.findElement(By.name("ctl00$mainContent$chk_friendsandfamily")).isSelected());
 
-		// seleziono il dorpdown del numero di passeggeri per aprire la selezione del
+		// seleziono il dropdown del numero di passeggeri per aprire la selezione del
 		// numero di passeggeri
 		driver.findElement(By.id("divpaxinfo")).click();
 
@@ -56,6 +56,9 @@ public class UpdatedDropdown {
 
 		// stampo in console l'output del totale dei passeggeri selezionati e lo stampiamo in console
 		// System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
+		
+		
+		
 
 	}
 

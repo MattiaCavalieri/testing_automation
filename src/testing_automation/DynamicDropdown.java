@@ -11,6 +11,11 @@ public class DynamicDropdown {
 		// inizializzo il driver per Chrome e navigo verso il link di test
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+		
+		Thread.sleep(2000);
+		
+		// seleziono "Round Trip" per abilitare il calendar per la data di ritorno
+		driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
 
 		// //a[@value='BLR'] --> xpath dell'elemento che dobbiamo selezionare per la
 		// partenza
@@ -26,6 +31,16 @@ public class DynamicDropdown {
 		// seleziono "Chennai" come destinazione, usando la sintassi vista prima
 		driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click();
 
+		// selezioniamo la data corrente come data di partenza
+		// RICORDA: stai selezionando classi, quindi devi aggiungere il "." prima del nome delle classi
+		driver.findElement(By.cssSelector(".ui-state-default.ui-state-active")).click();
+		
+		// viene inserita automaticamente la data del ritorno impostata ad una settiana dalla data di partenza. 
+		// completiamo l'azione con il click su "search"
+		driver.findElement(By.id("ctl00_mainContent_btn_FindFlights")).click();
+		System.out.println("Ricerca completata");
+		
+		
 	}
 
 }
