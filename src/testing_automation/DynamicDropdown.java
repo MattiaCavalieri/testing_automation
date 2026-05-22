@@ -32,6 +32,7 @@ public class DynamicDropdown {
 		driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click();
 
 		// selezioniamo la data corrente come data di partenza
+		// 
 		// RICORDA: stai selezionando classi, quindi devi aggiungere il "." prima del nome delle classi
 		driver.findElement(By.cssSelector(".ui-state-default.ui-state-active")).click();
 		
