@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-public class e2eAutomation {
+public class E2EAutomation {
 
 	public static void main(String[] args) throws InterruptedException {
 		// prima automazione E2E che racchiude tutti gli elementi utilizzati finora
