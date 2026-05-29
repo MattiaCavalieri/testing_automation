@@ -14,12 +14,12 @@ public class Shopping {
 		// Gestione di un flusso di shopping: aggiungiamo elementi ad un carrello
 
 		// Definiamo la lista di prodotti da aggiungere
-		String[] prodottiRichiesti = { "Cucumber", "Brocolli" };
+		String[] prodottiRichiesti = { "Cucumber", "Brocolli", "Beetroot" };
 
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/");
-		
+
 		Thread.sleep(3000);
 
 		// Vogliamo aggiungere "Cucumber" al carrello, ma in questa pagina non ci sono
@@ -32,7 +32,7 @@ public class Shopping {
 		// recuperiamo tutti i prodotti della vetrina e li salviamo in una lista di
 		// WebElement
 		List<WebElement> prodotti = driver.findElements(By.cssSelector("h4.product-name"));
-		
+
 		int conteggio = 0;
 
 		for (int i = 0; i < prodotti.size(); i++) {
@@ -45,15 +45,20 @@ public class Shopping {
 			// convertiamo l'array in un arrayList
 			List<String> items = Arrays.asList(prodottiRichiesti);
 
-			
 			if (items.contains(nomeProdotto)) {
 				conteggio++;
 				// clicchiamo su "Add to Cart"
-				driver.findElements(By.xpath("//button[text()='ADD TO CART']")).get(i).click();
+				// in questo esempio ci siamo basati sul testo del pulsante, ma non è una buona
+				// pratica
+				// e' meglio utilizzare qualcosa che identifichi univocamente i singoli
+				// componenti, come la calsse action che contiene il pulsante "ADD TO CART"
+				// driver.findElements(By.xpath("//button[text()='ADD TO
+				// CART']")).get(i).click();
+				driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
 				System.out.println("ho aggiunto l'item " + nomeProdotto + " al carrello!");
 				if (conteggio == prodottiRichiesti.length)
 					break;
-				
+
 			}
 
 		}
