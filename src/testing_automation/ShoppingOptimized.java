@@ -8,6 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ShoppingOptimized {
 
@@ -31,7 +33,6 @@ public class ShoppingOptimized {
 				System.out.println("ho aggiunto l'item " + nomeProdotto + " al carrello!");
 				if (conteggio == prodottiDaAggiungere.length)
 					break;
-
 			}
 
 		}
@@ -47,13 +48,18 @@ public class ShoppingOptimized {
 
 		// l'implicity wait viene definito a livello globale non appena viene creato il
 		// driver
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		// driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+		// impostiamo un explicit wait per permettere alla pagina di caricarsi
+		// completamente
+		// e si applica all'elemento specifico, identificato dal locator specifico
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/");
 		// definiamo gli items da aggiungere
 		String[] prodottiRichiesti = { "Cucumber", "Brocolli", "Beetroot" };
 
-		Thread.sleep(3000);
+		
 		// aggiungiamo i prodotti richiesti
 		addItems(driver, prodottiRichiesti);
 
@@ -62,11 +68,18 @@ public class ShoppingOptimized {
 		driver.findElement(By.className("action-block")).click();
 		// una volta aperto il pop-up del checkout, inseriamo il promo code
 		// "rahulshettyacademy"
+
+		// usiamo sempre l'explicit wait per attendere il caricamento della pagina
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input.promoCode")));
 		driver.findElement(By.className("promoCode")).sendKeys("rahulshettyacademy");
+
 		// lanciando il test, fallisce perchè non riesce ad individuare l'elemento
-		// abbiamo bisogno dell'implictly wait, definito subito dopo la creazione del driver
+		// abbiamo bisogno dell'implictly wait, definito subito dopo la creazione del
+		// driver, oppure dell'explicit wait che abbiamo definito prima
 		driver.findElement(By.className("promoBtn")).click();
-		
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("promoInfo")));
+
 		// verifichiamo che il testo "Code appliend.!" sia effettivamente visualizzato
 		System.out.println(driver.findElement(By.className("promoInfo")).getText());
 	}

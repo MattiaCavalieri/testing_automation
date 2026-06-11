@@ -20,7 +20,7 @@ public class AutoSuggestive {
 
 		Thread.sleep(2000);
 
-		// devo scandire le opzioni visualizzate per capire su qquale devo cliccare
+		// devo scandire le opzioni visualizzate per capire su quale devo cliccare
 		// uso un xpath per recuperare tutte le possibili opzioni mostrate
 		// li[class='ui-menu-item'] a --> cssSelector di tipo a della classe
 		// ui-menu-item
