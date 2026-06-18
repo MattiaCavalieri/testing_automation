@@ -41,6 +41,12 @@ public class WindowHandles {
 
 		// dobbiamo estrarre "mentor@rahulshettyacademy.com"
 		String testo = driver.findElement(By.cssSelector(".im-para.red")).getText();
+		String[] parole = testo.split(" ");
+		String username = parole[4];
+		
+		// ri-switchamo sulla scheda principale
+		driver.switchTo().window(parentID);
+		driver.findElement(By.id("username")).sendKeys(username);
 	}
 
 }
