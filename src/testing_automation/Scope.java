@@ -1,6 +1,8 @@
 package testing_automation;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -30,13 +32,22 @@ public class Scope {
 		System.out.println(firstColumnDriver.findElements(By.tagName("a")).size());
 
 		// click on each in the column and check if the pages are opening
-		// to optimize the solution we have to simulate ctrl + click on each link to open
+		// to optimize the solution we have to simulate ctrl + click on each link to
+		// open
 		// the link in different tabs
 		for (int i = 1; i < firstColumnDriver.findElements(By.tagName("a")).size(); i++) {
-			String clickOnLink = Keys.chord(Keys.CONTROL,Keys.ENTER);
+			String clickOnLink = Keys.chord(Keys.CONTROL, Keys.ENTER);
 			firstColumnDriver.findElements(By.tagName("a")).get(i).sendKeys(clickOnLink);
 			Thread.sleep(5000L);
-			  
+		}
+
+		// let's grab the title of each page and print it in the console
+		Set<String> windows = driver.getWindowHandles();
+		Iterator<String> iter = windows.iterator();
+
+		while (iter.hasNext()) {
+			driver.switchTo().window(iter.next());
+			System.out.println(driver.getTitle());
 		}
 	}
 
