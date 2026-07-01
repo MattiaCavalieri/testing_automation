@@ -24,7 +24,6 @@ public class AutocompleteAssignment {
 		italy.selectByVisibleText("Italy");
 		
 		// check if the value in the box is updated
-
 	}
 
 }
