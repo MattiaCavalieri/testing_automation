@@ -41,7 +41,7 @@ public class BrokenLink {
 			
 			System.out.println("Checking: " + url);
 			
-			HttpsURLConnection connection = (HttpsURLConnection) new URI(url).toURL().openConnection();
+			HttpURLConnection connection = (HttpURLConnection) new URI(url).toURL().openConnection();
 			connection.setRequestMethod("HEAD");
 			connection.connect();
 			int responseCode = connection.getResponseCode();
