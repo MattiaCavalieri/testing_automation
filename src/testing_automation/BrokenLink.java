@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 public class BrokenLink {
 
@@ -28,8 +29,12 @@ public class BrokenLink {
 		// there are some Java methods that verify the http statuts to determine if the
 		// link is broken
 		// if status code > 400 --> broken link
+		
+		// Soft Assertion : servono a non bloccare il metodo nel caso un'assertion fallisca
 
 		List<WebElement> links = driver.findElements(By.cssSelector("li[class='gf-li'] a"));
+		
+		SoftAssert sw = new SoftAssert();
 
 		for (WebElement link : links) {
 			String url = link.getAttribute("href");
@@ -41,11 +46,11 @@ public class BrokenLink {
 			connection.connect();
 			int responseCode = connection.getResponseCode();
 			System.out.println(responseCode);
-			if (responseCode > 400) {
-				System.out.println("The link with text: " + link.getText() + " is broken");
-				Assert.assertTrue(false);
-			}
+			sw.assertTrue(responseCode < 400, "The link with text: " + link.getText() + " is broken");
+			
 		}
+		
+		sw.assertAll();
 
 	}
 
