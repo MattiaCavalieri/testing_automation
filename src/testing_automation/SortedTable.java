@@ -15,7 +15,7 @@ public class SortedTable {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
 
-		// click on the colum to sort the table
+		// click on the column to sort the table
 		driver.findElement(By.xpath("//tr/th[1]")).click();
 
 		// capture all the web element into List
