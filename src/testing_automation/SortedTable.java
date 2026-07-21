@@ -31,6 +31,18 @@ public class SortedTable {
 		// compare original list and sorted list
 		Assert.assertTrue(productNames.equals(sortedProductNames));
 
+		// scan the name column with getText() --> Rice --> print the price of the
+		// product "Rice"
+		List<String> price = elements.stream().filter(x -> x.getText().contains("Beans")).map(x -> getPriceVeggie(x))
+				.collect(Collectors.toList());
+		
+		price.forEach(x-> System.out.println(x));
+
+	}
+
+	private static String getPriceVeggie(WebElement product) {
+		String price = product.findElement(By.xpath("following-sibling::td[1]")).getText();
+		return price;
 	}
 
 }
