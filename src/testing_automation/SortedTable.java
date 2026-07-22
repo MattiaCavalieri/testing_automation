@@ -13,6 +13,7 @@ public class SortedTable {
 
 	public static void main(String[] args) {
 		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
 
 		// click on the column to sort the table
@@ -33,10 +34,19 @@ public class SortedTable {
 
 		// scan the name column with getText() --> Rice --> print the price of the
 		// product "Rice"
-		List<String> price = elements.stream().filter(x -> x.getText().contains("Beans")).map(x -> getPriceVeggie(x))
-				.collect(Collectors.toList());
-		
-		price.forEach(x-> System.out.println(x));
+		// we use do-while loop
+		List<String> price;
+		do {
+			List<WebElement> rows = driver.findElements(By.xpath("//tr/td[1]"));
+			price = rows.stream().filter(x -> x.getText().contains("Rice")).map(x -> getPriceVeggie(x))
+					.collect(Collectors.toList());
+
+			price.forEach(x -> System.out.println(x));
+			if (price.size() < 1) {
+				// in this case we click on "Next" button
+				driver.findElement(By.cssSelector("[aria-label='Next']")).click();
+			}
+		} while (price.size() < 1);
 
 	}
 
