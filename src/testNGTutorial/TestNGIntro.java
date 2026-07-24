@@ -9,5 +9,10 @@ public class TestNGIntro {
 		// automation code
 		System.out.println("Hello World!");
 	}
+	
+	@Test
+	public void testScenario() {
+		System.out.println("second test!");
+	}
 
 }
