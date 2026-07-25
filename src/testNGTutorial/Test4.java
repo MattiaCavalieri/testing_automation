@@ -15,6 +15,16 @@ public class Test4 {
 	}
 	
 	@Test
+	public void mobileSignIn() {
+		System.out.println("Mobile Sign in....");
+	}
+	
+	@Test
+	public void mobileSignOut() {
+		System.out.println("Mobile Sign out");
+	}
+	
+	@Test
 	public void apiLoginHome() {
 		System.out.println("API login Home done!");
 	}

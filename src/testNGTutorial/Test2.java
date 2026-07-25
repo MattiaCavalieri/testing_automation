@@ -9,6 +9,7 @@ public class Test2 {
 		System.out.println("very good!");
 	}
 	
+	@Test
 	public void doNotExecute() {
 		System.out.println("don't execute me!");
 	}
