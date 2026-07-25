@@ -4,14 +4,22 @@
 	<test thread-count="5" name="MyçPersonalProject">
 		<classes>
 			<class name="testNGTutorial.TestNGIntro" />
-			<class name="testNGTutorial.Test2" />
+			<class name="testNGTutorial.Test2">
+				<methods>
+					<include name="test3"></include> <!-- Include specific methods -->
+				</methods>
+			</class>
 		</classes>
-	</test> 
+	</test>
 
 	<test name="Home Login">
-	<classes>
-		<class name="testNGTutorial.Test3"></class>
-		<class name="testNGTutorial.Test4"></class>
-	</classes>
+		<classes>
+			<class name="testNGTutorial.Test3"></class>
+			<class name="testNGTutorial.Test4">
+				<methods>
+					<exclude name="mobileLoginHome"></exclude> <!-- Exclude specific methods form "Test4 class -->
+				</methods>
+			</class>
+		</classes>
 	</test>
 </suite> <!-- Suite -->
