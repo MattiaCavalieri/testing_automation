@@ -9,40 +9,41 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class Test4 {
-	
-	@Parameters({"URL"})
+
+	@Parameters({ "URL" })
 	@Test(groups = "sanity")
 	public void loginHome(String url) {
 		System.out.println("Login Home completed successfully!");
 		System.out.println("Connected to: " + url);
 	}
-	
+
 	@Test(groups = "sanity")
 	public void mobileLoginHome() {
 		System.out.println("Mobile app Home login done!");
 	}
-	
-	@Test 
+
+	@Test
 	public void mobileSignIn() {
 		System.out.println("Mobile Sign in....");
 	}
-	
+
 	@Test(enabled = false)
 	public void mobileSignOut() {
 		System.out.println("Mobile Sign out");
 	}
-	
+
 	@Test(timeOut = 4000)
 	public void apiLoginHome() {
 		System.out.println("API login Home done!");
 	}
-	
+
 	@DataProvider
 	public void getData() {
 		// 1st combination: username - password
 		// 2nd combination: username - password - no credit history
 		// 3rd combination: fraudolent credit history
-		// we create a ulti-dimensional Object Array, with 3 combination of data set, for each combination we pass 2 paramenters
+		// we create a ulti-dimensional Object Array, with 3 combination of data set,
+		// for each combination we pass 2 paramenters
 		Object[][] data = new Object[3][2];
 		// 1st combination: username - password
 		data[0][0] = "firstUsername";
@@ -53,25 +54,23 @@ public class Test4 {
 		// 3rd combination: fraudolent credit history
 		data[2][0] = "thirdUsername";
 		data[2][1] = "thirdPassword";
-		
-		
 	}
-	
+
 	@BeforeMethod
 	public void beforeMethod() {
 		System.out.println("preparing the executotion of the test...");
 	}
-	
+
 	@AfterMethod
 	public void afterMethod() {
 		System.out.println("Erasing the data to run next test");
 	}
-	
+
 	@BeforeClass
 	public void beforeClass() {
 		System.out.println("before executing any tests included in this class");
 	}
-	
+
 	@AfterClass
 	public void afterClass() {
 		System.out.println("after executing any tests included in this class");
