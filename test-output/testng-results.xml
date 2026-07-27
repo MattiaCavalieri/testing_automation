@@ -1,67 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
+<testng-results ignored="8" total="12" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-25T12:02:02 CEST" name="MySuite" finished-at="2026-07-25T12:02:02 CEST" duration-ms="50">
+  <suite started-at="2026-07-27T16:07:15 CEST" name="Sanity Test" finished-at="2026-07-27T16:07:16 CEST" duration-ms="176">
     <groups>
+      <group name="sanity">
+        <method signature="Test3.apiLogin()[pri:0, instance:testNGTutorial.Test3@5b12b668]" name="apiLogin" class="testNGTutorial.Test3"/>
+        <method signature="Test3.mobileLogin()[pri:0, instance:testNGTutorial.Test3@5b12b668]" name="mobileLogin" class="testNGTutorial.Test3"/>
+        <method signature="Test4.loginHome(java.lang.String)[pri:0, instance:testNGTutorial.Test4@1165b38]" name="loginHome" class="testNGTutorial.Test4"/>
+        <method signature="Test4.mobileLoginHome()[pri:0, instance:testNGTutorial.Test4@1165b38]" name="mobileLoginHome" class="testNGTutorial.Test4"/>
+      </group> <!-- sanity -->
     </groups>
-    <test started-at="2026-07-25T12:02:02 CEST" name="Testing automation" finished-at="2026-07-25T12:02:02 CEST" duration-ms="50">
-      <class name="testNGTutorial.TestNGIntro">
-        <test-method signature="demo()[pri:0, instance:testNGTutorial.TestNGIntro@291ae]" started-at="2026-07-25T12:02:02 CEST" name="demo" finished-at="2026-07-25T12:02:02 CEST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- demo -->
-        <test-method signature="testScenario()[pri:0, instance:testNGTutorial.TestNGIntro@291ae]" started-at="2026-07-25T12:02:02 CEST" name="testScenario" finished-at="2026-07-25T12:02:02 CEST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testScenario -->
-      </class> <!-- testNGTutorial.TestNGIntro -->
-      <class name="testNGTutorial.Test2">
-        <test-method signature="doNotExecute()[pri:0, instance:testNGTutorial.Test2@130161f7]" started-at="2026-07-25T12:02:02 CEST" name="doNotExecute" finished-at="2026-07-25T12:02:02 CEST" duration-ms="7" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- doNotExecute -->
-        <test-method signature="test3()[pri:0, instance:testNGTutorial.Test2@130161f7]" started-at="2026-07-25T12:02:02 CEST" name="test3" finished-at="2026-07-25T12:02:02 CEST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test3 -->
-      </class> <!-- testNGTutorial.Test2 -->
+    <test started-at="2026-07-27T16:07:15 CEST" name="Sanity" finished-at="2026-07-27T16:07:16 CEST" duration-ms="176">
       <class name="testNGTutorial.Test3">
-        <test-method signature="apiLogin()[pri:0, instance:testNGTutorial.Test3@2ef3eef9]" started-at="2026-07-25T12:02:02 CEST" name="apiLogin" finished-at="2026-07-25T12:02:02 CEST" duration-ms="2" status="PASS">
+        <test-method signature="apiLogin()[pri:0, instance:testNGTutorial.Test3@5b12b668]" started-at="2026-07-27T16:07:16 CEST" name="apiLogin" finished-at="2026-07-27T16:07:16 CEST" duration-ms="19" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- apiLogin -->
-        <test-method signature="login()[pri:0, instance:testNGTutorial.Test3@2ef3eef9]" started-at="2026-07-25T12:02:02 CEST" name="login" finished-at="2026-07-25T12:02:02 CEST" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="mobileLogin()[pri:0, instance:testNGTutorial.Test3@2ef3eef9]" started-at="2026-07-25T12:02:02 CEST" name="mobileLogin" finished-at="2026-07-25T12:02:02 CEST" duration-ms="1" status="PASS">
+        <test-method signature="mobileLogin()[pri:0, instance:testNGTutorial.Test3@5b12b668]" started-at="2026-07-27T16:07:16 CEST" name="mobileLogin" finished-at="2026-07-27T16:07:16 CEST" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mobileLogin -->
       </class> <!-- testNGTutorial.Test3 -->
       <class name="testNGTutorial.Test4">
-        <test-method signature="apiLoginHome()[pri:0, instance:testNGTutorial.Test4@243c4f91]" started-at="2026-07-25T12:02:02 CEST" name="apiLoginHome" finished-at="2026-07-25T12:02:02 CEST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- apiLoginHome -->
-        <test-method signature="loginHome()[pri:0, instance:testNGTutorial.Test4@243c4f91]" started-at="2026-07-25T12:02:02 CEST" name="loginHome" finished-at="2026-07-25T12:02:02 CEST" duration-ms="0" status="PASS">
+        <test-method signature="loginHome(java.lang.String)[pri:0, instance:testNGTutorial.Test4@1165b38]" started-at="2026-07-27T16:07:16 CEST" name="loginHome" finished-at="2026-07-27T16:07:16 CEST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://rahulshettyacademy.com/seleniumPractise/#/offers]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginHome -->
-        <test-method signature="mobileLoginHome()[pri:0, instance:testNGTutorial.Test4@243c4f91]" started-at="2026-07-25T12:02:02 CEST" name="mobileLoginHome" finished-at="2026-07-25T12:02:02 CEST" duration-ms="1" status="PASS">
+        <test-method signature="mobileLoginHome()[pri:0, instance:testNGTutorial.Test4@1165b38]" started-at="2026-07-27T16:07:16 CEST" name="mobileLoginHome" finished-at="2026-07-27T16:07:16 CEST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mobileLoginHome -->
-        <test-method signature="mobileSignIn()[pri:0, instance:testNGTutorial.Test4@243c4f91]" started-at="2026-07-25T12:02:02 CEST" name="mobileSignIn" finished-at="2026-07-25T12:02:02 CEST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- mobileSignIn -->
-        <test-method signature="mobileSignOut()[pri:0, instance:testNGTutorial.Test4@243c4f91]" started-at="2026-07-25T12:02:02 CEST" name="mobileSignOut" finished-at="2026-07-25T12:02:02 CEST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- mobileSignOut -->
       </class> <!-- testNGTutorial.Test4 -->
-    </test> <!-- Testing automation -->
-  </suite> <!-- MySuite -->
+    </test> <!-- Sanity -->
+  </suite> <!-- Sanity Test -->
 </testng-results>
