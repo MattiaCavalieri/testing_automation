@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="8" total="12" passed="4" failed="0" skipped="0">
+<testng-results ignored="2" total="7" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-27T16:07:15 CEST" name="Sanity Test" finished-at="2026-07-27T16:07:16 CEST" duration-ms="176">
+  <suite started-at="2026-07-28T22:05:04 CEST" name="Sanity Test" finished-at="2026-07-28T22:05:04 CEST" duration-ms="110">
     <groups>
       <group name="sanity">
-        <method signature="Test3.apiLogin()[pri:0, instance:testNGTutorial.Test3@5b12b668]" name="apiLogin" class="testNGTutorial.Test3"/>
-        <method signature="Test3.mobileLogin()[pri:0, instance:testNGTutorial.Test3@5b12b668]" name="mobileLogin" class="testNGTutorial.Test3"/>
-        <method signature="Test4.loginHome(java.lang.String)[pri:0, instance:testNGTutorial.Test4@1165b38]" name="loginHome" class="testNGTutorial.Test4"/>
-        <method signature="Test4.mobileLoginHome()[pri:0, instance:testNGTutorial.Test4@1165b38]" name="mobileLoginHome" class="testNGTutorial.Test4"/>
+        <method signature="Test4.loginHome(java.lang.String)[pri:0, instance:testNGTutorial.Test4@5f058f00]" name="loginHome" class="testNGTutorial.Test4"/>
+        <method signature="Test4.mobileLoginHome()[pri:0, instance:testNGTutorial.Test4@5f058f00]" name="mobileLoginHome" class="testNGTutorial.Test4"/>
+        <method signature="Test4.mobileSignIn(java.lang.String,java.lang.String)[pri:0, instance:testNGTutorial.Test4@5f058f00]" name="mobileSignIn" class="testNGTutorial.Test4"/>
       </group> <!-- sanity -->
     </groups>
-    <test started-at="2026-07-27T16:07:15 CEST" name="Sanity" finished-at="2026-07-27T16:07:16 CEST" duration-ms="176">
-      <class name="testNGTutorial.Test3">
-        <test-method signature="apiLogin()[pri:0, instance:testNGTutorial.Test3@5b12b668]" started-at="2026-07-27T16:07:16 CEST" name="apiLogin" finished-at="2026-07-27T16:07:16 CEST" duration-ms="19" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- apiLogin -->
-        <test-method signature="mobileLogin()[pri:0, instance:testNGTutorial.Test3@5b12b668]" started-at="2026-07-27T16:07:16 CEST" name="mobileLogin" finished-at="2026-07-27T16:07:16 CEST" duration-ms="4" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- mobileLogin -->
-      </class> <!-- testNGTutorial.Test3 -->
+    <test started-at="2026-07-28T22:05:04 CEST" name="Sanity" finished-at="2026-07-28T22:05:04 CEST" duration-ms="110">
       <class name="testNGTutorial.Test4">
-        <test-method signature="loginHome(java.lang.String)[pri:0, instance:testNGTutorial.Test4@1165b38]" started-at="2026-07-27T16:07:16 CEST" name="loginHome" finished-at="2026-07-27T16:07:16 CEST" duration-ms="4" status="PASS">
+        <test-method signature="loginHome(java.lang.String)[pri:0, instance:testNGTutorial.Test4@5f058f00]" started-at="2026-07-28T22:05:04 CEST" name="loginHome" finished-at="2026-07-28T22:05:04 CEST" duration-ms="15" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -34,10 +23,58 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginHome -->
-        <test-method signature="mobileLoginHome()[pri:0, instance:testNGTutorial.Test4@1165b38]" started-at="2026-07-27T16:07:16 CEST" name="mobileLoginHome" finished-at="2026-07-27T16:07:16 CEST" duration-ms="3" status="PASS">
+        <test-method signature="mobileLoginHome()[pri:0, instance:testNGTutorial.Test4@5f058f00]" started-at="2026-07-28T22:05:04 CEST" name="mobileLoginHome" finished-at="2026-07-28T22:05:04 CEST" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mobileLoginHome -->
+        <test-method signature="mobileSignIn(java.lang.String,java.lang.String)[pri:0, instance:testNGTutorial.Test4@5f058f00]" started-at="2026-07-28T22:05:04 CEST" name="mobileSignIn" data-provider="getData" finished-at="2026-07-28T22:05:04 CEST" duration-ms="7" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firstUsername]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[firstPassword]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mobileSignIn -->
+        <test-method signature="mobileSignIn(java.lang.String,java.lang.String)[pri:0, instance:testNGTutorial.Test4@5f058f00]" started-at="2026-07-28T22:05:04 CEST" name="mobileSignIn" data-provider="getData" finished-at="2026-07-28T22:05:04 CEST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[secondUsername]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secondPassword]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mobileSignIn -->
+        <test-method signature="mobileSignIn(java.lang.String,java.lang.String)[pri:0, instance:testNGTutorial.Test4@5f058f00]" started-at="2026-07-28T22:05:04 CEST" name="mobileSignIn" data-provider="getData" finished-at="2026-07-28T22:05:04 CEST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[thirdUsername]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[thirdPassword]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mobileSignIn -->
       </class> <!-- testNGTutorial.Test4 -->
     </test> <!-- Sanity -->
   </suite> <!-- Sanity Test -->

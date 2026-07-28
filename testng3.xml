@@ -9,9 +9,6 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="testNGTutorial.TestNGIntro" />
-			<class name="testNGTutorial.Test2" />
-			<class name="testNGTutorial.Test3" />
 			<class name="testNGTutorial.Test4" />
 		</classes>
 	</test>

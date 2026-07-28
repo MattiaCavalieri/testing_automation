@@ -22,11 +22,6 @@ public class Test4 {
 		System.out.println("Mobile app Home login done!");
 	}
 
-	@Test
-	public void mobileSignIn() {
-		System.out.println("Mobile Sign in....");
-	}
-
 	@Test(enabled = false)
 	public void mobileSignOut() {
 		System.out.println("Mobile Sign out");
@@ -37,8 +32,15 @@ public class Test4 {
 		System.out.println("API login Home done!");
 	}
 
+	@Test(dataProvider = "getData", groups = "sanity")
+	public void mobileSignIn(String username, String password) {
+		System.out.println("Mobile Sign in....");
+		System.out.println("Username: " + username);
+		System.out.println("Password: " + password);
+	}
+
 	@DataProvider
-	public void getData() {
+	public Object getData() {
 		// 1st combination: username - password
 		// 2nd combination: username - password - no credit history
 		// 3rd combination: fraudolent credit history
@@ -54,6 +56,7 @@ public class Test4 {
 		// 3rd combination: fraudolent credit history
 		data[2][0] = "thirdUsername";
 		data[2][1] = "thirdPassword";
+		return data;
 	}
 
 	@BeforeMethod
