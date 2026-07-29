@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Sanity Test">
-	<parameter name="URL" value="https://rahulshettyacademy.com/seleniumPractise/#/offers"></parameter>
+	<parameter name="URL"
+		value="https://rahulshettyacademy.com/seleniumPractise/#/offers"></parameter>
+	<listeners>
+		<listener class-name="testNGTutorial.Listeners"></listener>
+	</listeners>
 	<test thread-count="5" name="Sanity">
 		<groups>
 			<run>
