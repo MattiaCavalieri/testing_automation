@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Sanity_Test" class="navigator-link ">
-                    <span>C:\Users\matti\git\testing_automation\testng3.xml</span>
+                    <span>C:\Users\mcavalie\git\testing_automation\testng3.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -188,7 +188,7 @@
         </div> <!-- panel Sanity_Test -->
         <div panel-name="test-xml-Sanity_Test" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\matti\git\testing_automation\testng3.xml</span>
+            <span class="header-content">C:\Users\mcavalie\git\testing_automation\testng3.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -196,6 +196,9 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Sanity Test&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;parameter name=&quot;URL&quot; value=&quot;https://rahulshettyacademy.com/seleniumPractise/#/offers&quot;/&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;testNGTutorial.Listeners&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Sanity&quot;&gt;
     &lt;groups&gt;
       &lt;run&gt;
@@ -263,28 +266,28 @@ data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'loginHome')
 data.setCell(0, 2, 'testNGTutorial.Test4')
-data.setCell(0, 3, 15);
+data.setCell(0, 3, 90);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'mobileSignIn')
 data.setCell(1, 2, 'testNGTutorial.Test4')
-data.setCell(1, 3, 7);
+data.setCell(1, 3, 60);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'mobileLoginHome')
 data.setCell(2, 2, 'testNGTutorial.Test4')
-data.setCell(2, 3, 4);
+data.setCell(2, 3, 32);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'mobileSignIn')
 data.setCell(3, 2, 'testNGTutorial.Test4')
-data.setCell(3, 3, 3);
+data.setCell(3, 3, 4);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'mobileSignIn')
 data.setCell(4, 2, 'testNGTutorial.Test4')
-data.setCell(4, 3, 1);
+data.setCell(4, 3, 4);
 window.suiteTableData['Sanity_Test']= { tableData: data, tableDiv: 'times-div-Sanity_Test'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 30 ms</span>
+              <span class="suite-total-time">Total running time: 190 ms</span>
               <div id="times-div-Sanity_Test">
               </div> <!-- times-div-Sanity_Test -->
             </div> <!-- times-div -->
@@ -305,9 +308,9 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">testNGTutorial.Test4</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">mobileSignOut</span>
-                <br/>
                 <span class="ignored-method-name">apiLoginHome</span>
+                <br/>
+                <span class="ignored-method-name">mobileSignOut</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -326,19 +329,19 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">mobileLoginHome</span>
-                <span class="method-start">25 ms</span>
+                <span class="method-start">158 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">mobileSignIn(firstUsername, firstPassword)</span>
-                <span class="method-start">36 ms</span>
+                <span class="method-start">208 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">mobileSignIn(secondUsername, secondPassword)</span>
-                <span class="method-start">47 ms</span>
+                <span class="method-start">279 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">mobileSignIn(thirdUsername, thirdPassword)</span>
-                <span class="method-start">52 ms</span>
+                <span class="method-start">289 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
