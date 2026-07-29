@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Sanity_Test" class="navigator-link">
-              <span class="suite-name border-passed">Sanity Test</span>
+              <span class="suite-name border-failed">Sanity Test</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Sanity_Test" class="hide-methods failed suite-Sanity_Test"> (hide)</a> <!-- hide-methods failed suite-Sanity_Test -->
+                      <a href="#" panel-name="suite-Sanity_Test" class="show-methods failed suite-Sanity_Test"> (show)</a> <!-- show-methods failed suite-Sanity_Test -->
+                    </span>
+                    <div class="method-list-content failed suite-Sanity_Test">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Sanity_Test" title="testNGTutorial.Test4" class="method navigator-link" hash-for-method="mobileLoginHome">mobileLoginHome</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Sanity_Test -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,11 +118,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Sanity_Test" title="testNGTutorial.Test4" class="method navigator-link" hash-for-method="loginHome(https://rahulshettyacademy.com/seleniumPractise/#/offers)">loginHome(https://rahulshettyacademy.com/seleniumPractise/#/offers)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Sanity_Test" title="testNGTutorial.Test4" class="method navigator-link" hash-for-method="mobileLoginHome">mobileLoginHome</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -138,6 +147,30 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Sanity_Test" class="panel Sanity_Test">
+          <div class="suite-Sanity_Test-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">testNGTutorial.Test4</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="mobileLoginHome">
+                  </a> <!-- mobileLoginHome -->
+                  <span class="method-name">mobileLoginHome</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at testNGTutorial.Test4.mobileLoginHome(Test4.java:24)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 19 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Sanity_Test-class-failed -->
           <div class="suite-Sanity_Test-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -150,13 +183,6 @@
                   </a> <!-- loginHome(https://rahulshettyacademy.com/seleniumPractise/#/offers) -->
                   <span class="method-name">loginHome</span>
                   <span class="parameters">(https://rahulshettyacademy.com/seleniumPractise/#/offers)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="mobileLoginHome">
-                  </a> <!-- mobileLoginHome -->
-                  <span class="method-name">mobileLoginHome</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -194,12 +220,12 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Sanity Test&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+&lt;suite parallel=&quot;tests&quot; name=&quot;Sanity Test&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;parameter name=&quot;URL&quot; value=&quot;https://rahulshettyacademy.com/seleniumPractise/#/offers&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;testNGTutorial.Listeners&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Sanity&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Sanity&quot;&gt;
     &lt;groups&gt;
       &lt;run&gt;
         &lt;include name=&quot;sanity&quot;/&gt;
@@ -266,15 +292,15 @@ data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'loginHome')
 data.setCell(0, 2, 'testNGTutorial.Test4')
-data.setCell(0, 3, 90);
+data.setCell(0, 3, 18);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'mobileSignIn')
+data.setCell(1, 1, 'mobileLoginHome')
 data.setCell(1, 2, 'testNGTutorial.Test4')
-data.setCell(1, 3, 60);
+data.setCell(1, 3, 17);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'mobileLoginHome')
+data.setCell(2, 1, 'mobileSignIn')
 data.setCell(2, 2, 'testNGTutorial.Test4')
-data.setCell(2, 3, 32);
+data.setCell(2, 3, 10);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'mobileSignIn')
 data.setCell(3, 2, 'testNGTutorial.Test4')
@@ -282,12 +308,12 @@ data.setCell(3, 3, 4);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'mobileSignIn')
 data.setCell(4, 2, 'testNGTutorial.Test4')
-data.setCell(4, 3, 4);
+data.setCell(4, 3, 3);
 window.suiteTableData['Sanity_Test']= { tableData: data, tableDiv: 'times-div-Sanity_Test'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 190 ms</span>
+              <span class="suite-total-time">Total running time: 175 ms</span>
               <div id="times-div-Sanity_Test">
               </div> <!-- times-div-Sanity_Test -->
             </div> <!-- times-div -->
@@ -328,20 +354,22 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">mobileLoginHome</span>
-                <span class="method-start">158 ms</span>
+                <span class="method-start">43 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">mobileSignIn(firstUsername, firstPassword)</span>
-                <span class="method-start">208 ms</span>
+                <span class="method-start">74 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">mobileSignIn(secondUsername, secondPassword)</span>
-                <span class="method-start">279 ms</span>
+                <span class="method-start">88 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">mobileSignIn(thirdUsername, thirdPassword)</span>
-                <span class="method-start">289 ms</span>
+                <span class="method-start">96 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

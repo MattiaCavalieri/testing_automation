@@ -1,5 +1,6 @@
 package testNGTutorial;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -20,6 +21,7 @@ public class Test4 {
 	@Test(groups = "sanity")
 	public void mobileLoginHome() {
 		System.out.println("Mobile app Home login done!");
+		Assert.assertTrue(false);
 	}
 
 	@Test(enabled = false)
@@ -58,9 +60,6 @@ public class Test4 {
 		data[2][1] = "thirdPassword";
 		return data;
 	}
-	
-	
-	
 
 	@BeforeMethod
 	public void beforeMethod() {

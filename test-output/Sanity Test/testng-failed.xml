@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Sanity Test]" guice-stage="DEVELOPMENT">
+  <parameter name="URL" value="https://rahulshettyacademy.com/seleniumPractise/#/offers"/>
+  <listeners>
+    <listener class-name="testNGTutorial.Listeners"/>
+  </listeners>
+  <test thread-count="5" parallel="tests" name="Sanity(failed)">
+    <groups>
+      <run>
+        <include name="sanity"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="testNGTutorial.Test4">
+        <methods>
+          <include name="mobileLoginHome"/>
+        </methods>
+      </class> <!-- testNGTutorial.Test4 -->
+    </classes>
+  </test> <!-- Sanity(failed) -->
+</suite> <!-- Failed suite [Sanity Test] -->
